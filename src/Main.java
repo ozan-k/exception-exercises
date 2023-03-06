@@ -1,20 +1,19 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Please enter an integer numerator: ");
-        int numerator = scanner.nextInt();
-
-        System.out.print("Please enter an integer denominator: ");
-        int denominator = scanner.nextInt();
-
-        int quotient = quotient(numerator, denominator);
-        System.out.printf("%nResult: %d / %d = %d%n", numerator, denominator, quotient);
+  public static void main(String[] args) {
+    int[] ia = new int[5];
+    try {
+      for (int i = 0; i < 10; i++) {
+        ia[i] = i;
+        System.out.println(Arrays.toString(ia));
+      }
+    } catch (ArrayIndexOutOfBoundsException e) {
+      System.out.println(e.getMessage());
+      return;
     }
+  }
 
-    public static int quotient(int numerator, int denominator) {
-        return numerator / denominator;
-    }
 }
+
