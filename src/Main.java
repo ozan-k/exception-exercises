@@ -1,27 +1,22 @@
+import java.util.Scanner;
+
 public class Main {
-
   public static void main(String[] args) {
-    try {
-      System.out.println("Throwing an exception...");
-      int c = 5 / 0;
-    } catch (Exception e) {
-      System.out.println("Catching the first exception");
-    } finally {
-      System.out.println("First finally");
-    }
+    Scanner scanner = new Scanner(System.in);
 
-    System.out.println("After first try-block-finally!");
+    System.out.print("Please enter an integer numerator: ");
+    int numerator = scanner.nextInt();
 
-    try {
-      System.out.println("Not throwing an exception...");
-    } catch (Exception e) {
-      System.out.println("Catching the second exception");
-    } finally {
-      System.out.println("Second finally");
-    }
+    System.out.print("Please enter an integer denominator: ");
+    int denominator = scanner.nextInt();
 
-    System.out.println("After first try-block-finally!");
+    int quotient = quotient(numerator, denominator);
+    System.out.printf("%nResult: %d / %d = %d%n", numerator, denominator, 
+quotient);
   }
 
+  public static int quotient(int numerator, int denominator) {
+    return numerator / denominator;
+  }
 }
 
